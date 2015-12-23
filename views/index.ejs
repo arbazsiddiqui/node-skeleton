@@ -1,0 +1,31 @@
+<html>
+<head>
+    <% include partials/head.ejs %>
+
+</head>
+
+<body>
+<% include partials/navbar.ejs %>
+<div class="jumbotron col-md-6 col-md-offset-3 centerfy">
+
+    <ul class="list-group">
+        <form action="/completetodo" method="post">
+            <% for(i = 0; i < docs.length; i++) { %>
+            <li class="list-group-item">
+                <input type="checkbox" name=id value=<%= docs[i]._id %>> <%= docs[i].text %>
+            </li>
+            <% } %>
+            <br>
+            <input type="submit" value="Mark as done">
+        </form>
+    </ul>
+
+    <h3>Add task</h3>
+
+    <form action="/addtodo" method="post" accept-charset="utf-8">
+        <input type="text" name="text"/>
+    </form>
+</div>
+
+</body>
+</html>

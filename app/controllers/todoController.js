@@ -1,21 +1,24 @@
 var Todo = require('../models/todo');
+var isLoggedIn = require('../middlewares/isLoggedIn');
 
 module.exports = function (app) {
 
-    app.get('/todos', function (req, res) {
-        Todo.find({status: false},function (err, tododoc) {
+    app.get('/todos', isLoggedIn, function (req, res) {
+        Todo.find({status: false, email: req.user.local.email}, function (err, tododoc) {
             if (err) {
                 return res.send(err)
             }
+
             //res.json(tododoc) //uncomment if developing only APIs
-            res.render('index', {'docs': tododoc})
+            res.render('todos', {'docs': tododoc, 'user': req.user})
         })
     });
 
-    app.post('/addtodo', function (req, res) {
+    app.post('/addtodo', isLoggedIn, function (req, res) {
         Todo.create({
             text: req.body.text,
-            status: false
+            status: false,
+            email: req.user.local.email
         }, function (err, tododoc) {
             if (err) {
                 return res.send(err)
@@ -25,9 +28,9 @@ module.exports = function (app) {
         })
     });
 
-    app.post('/completetodo', function (req, res) {
+    app.post('/completetodo/:id', isLoggedIn, function (req, res) {
         Todo.findByIdAndUpdate(
-            req.body.id,
+            req.params.id,
             {status: true}, function (err, tododoc) {
                 if (err) {
                     return res.send(err)

@@ -1,4 +1,5 @@
 var isLoggedIn = require('../middlewares/isLoggedIn');
+var authenticated_using = require('../helpers/authenticated_using')
 
 module.exports = function (app, passport) {
 
@@ -37,7 +38,7 @@ module.exports = function (app, passport) {
 
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
-            successRedirect : '/profile',
+            successRedirect : '/todos',
             failureRedirect : '/'
         }));
 
@@ -46,14 +47,16 @@ module.exports = function (app, passport) {
 
     app.get('/auth/google/callback',
         passport.authenticate('google', {
-            successRedirect : '/profile',
+            successRedirect : '/todos',
             failureRedirect : '/'
         }));
 
     // we will use route middleware to verify this (the isLoggedIn function)
+    // and a helper to check which strategy was used to authenticate
     app.get('/profile', isLoggedIn, function (req, res) {
+        auth_user = authenticated_using(req)
         res.render('profile.ejs', {
-            user: req.user
+            user: auth_user
         });
     });
 
@@ -63,4 +66,3 @@ module.exports = function (app, passport) {
         res.redirect('/');
     });
 };
-

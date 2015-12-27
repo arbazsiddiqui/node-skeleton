@@ -1,2 +1,4 @@
 # node-skeleton
-A MVC skeleton for quick starting neat node web apps. Contains social-auth and basic CURD operations.
+A node application skeleton built for quick starting web apps, following MVC model and best practices.
+
+Contains social-auth and basic CURD operations.

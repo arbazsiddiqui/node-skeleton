@@ -12,4 +12,5 @@ Contains social-auth and basic CRUD operations.
 4. Run the server ```node server```
 5. Open ```http://localhost:8080```
 
-######TODO: Add a "Tasks" directory containing all the tasks for grunt.
+######TODO: 
+Add a "Tasks" directory containing all the tasks for grunt.

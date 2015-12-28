@@ -10,13 +10,13 @@
     "serve-favicon": "~2.3.0",
     "mongoose"        : "~3.8.13",
     "method-override" : "~2.1.1",
-    "ejs": "2.3.4",
-    "express-session" : "latest",
-    "passport" : "latest",
-    "passport-local" : "latest",
-    "passport-facebook" : "latest",
-    "passport-google-oauth" : "latest",
-    "connect-flash" : "latest",
-    "bcrypt-nodejs" : "latest"
+    "ejs": "~2.3.4",
+    "express-session" : "~1.12.1",
+    "passport" : "~0.3.2",
+    "passport-local" : "~1.0.0",
+    "passport-facebook" : "~2.0.0",
+    "passport-google-oauth" : "~0.2.0",
+    "connect-flash" : "~0.1.1",
+    "bcrypt-nodejs" : "~0.0.3"
   }
 }

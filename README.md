@@ -4,7 +4,7 @@ A node application skeleton built for quick starting web apps, following MVC mod
 Contains social-auth and basic CRUD operations.
 
 
-###Getting Started
+### Getting Started
 
 1. Perform a clone of this repo ```git clone https://github.com/arbazsiddiqui/node-skeleton```
 2. Install Mongodb on your system.
@@ -12,5 +12,5 @@ Contains social-auth and basic CRUD operations.
 4. Run the server ```node server```
 5. Open ```http://localhost:8080```
 
-######TODO: 
+###### TODO: 
 Add a "Tasks" directory containing all the tasks for grunt.

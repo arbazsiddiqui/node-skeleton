@@ -11,6 +11,3 @@ Contains social-auth and basic CRUD operations.
 3. Install the required packages ```npm install```
 4. Run the server ```node server```
 5. Open ```http://localhost:8080```
-
-###### TODO: 
-Add a "Tasks" directory containing all the tasks for grunt.
